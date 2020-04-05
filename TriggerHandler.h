@@ -19,6 +19,8 @@
 #ifndef GAME_TRIGGER_HANDLER_H
 #define GAME_TRIGGER_HANDLER_H
 
+#include <functional>
+
 #include "StdAfx.h"
 
 #include "GameTypes.h"

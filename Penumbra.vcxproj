@@ -43,15 +43,19 @@
     <OutDir>build/Debug\</OutDir>
     <IntDir>build/Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>../redist</OutDir>
     <IntDir>build/Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -59,6 +63,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <OutputFile>Penumbra.exe</OutputFile>
@@ -66,6 +71,7 @@
       <ProgramDatabaseFile>$(OutDir)Penumbra.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

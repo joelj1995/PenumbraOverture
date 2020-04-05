@@ -19,6 +19,8 @@
 #ifndef GAME_MAIN_MENU_H
 #define GAME_MAIN_MENU_H
 
+#include <functional>
+
 #include "StdAfx.h"
 
 #include "GameTypes.h"
