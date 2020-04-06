@@ -324,8 +324,8 @@ bool cInit::Init(tString asCommandLine)
     mpGameConfig = hplNew( cConfigFile, (_W("config/game.cfg")) );
 	mpGameConfig->Load();
 
-	mvScreenSize.x = mpConfig->GetInt("Screen","Width",800);
-	mvScreenSize.y = mpConfig->GetInt("Screen","Height",600);
+	mvScreenSize.x = mpConfig->GetInt("Screen","Width",1920);
+	mvScreenSize.y = mpConfig->GetInt("Screen","Height",1080);
 	mbFullScreen = mpConfig->GetBool("Screen", "FullScreen", true);
 	mbVsync = mpConfig->GetBool("Screen", "Vsync", false);
 	mbLogResources = mpConfig->GetBool("Debug", "LogResources", false);
