@@ -2128,10 +2128,9 @@ void cMainMenu::Reset()
 
 void cMainMenu::OnPostSceneDraw()
 {
-	mpInit->mpGraphicsHelper->ClearScreen(cColor(0,0));
+	mpInit->mpGraphicsHelper->ClearScreen(cColor(0.5,0.5));
 	
-	mpInit->mpGraphicsHelper->DrawTexture(mpLogo,0,cVector3f(800,180,30),cColor(1,1));
-	mpInit->mpGraphicsHelper->DrawTexture(mpBackground,cVector3f(0,180,0),cVector3f(800,420,0),cColor(1,1));
+	mpInit->mpGraphicsHelper->DrawTexture(mpLogo,0,cVector3f(300,150,30),cColor(1,1));
 
 	////////////////////////////////
 	// Fade in
@@ -2187,15 +2186,7 @@ static void DrawParticle(cGraphicsDrawer *apDrawer, cMainMenuParticle *apParticl
 
 void cMainMenu::DrawBackground()
 {
-	if(mbGameActive)
-	{
-		for(size_t i=0; i < mvSnowFlakes.size(); ++i) DrawParticle(mpDrawer,&mvSnowFlakes[i]);
-	}
-	else
-	{
-		for(size_t i=0; i < mvRainDrops.size(); ++i) DrawParticle(mpDrawer,&mvRainDrops[i]);
-		for(size_t i=0; i < mvRainSplashes.size(); ++i) DrawParticle(mpDrawer,&mvRainSplashes[i]);
-	}
+	// Penumbra used this to draw rain/snow particles
 }
 
 //-----------------------------------------------------------------------
@@ -2540,7 +2531,7 @@ void cMainMenu::SetActive(bool abX)
 
 		mpCurrentActionText = NULL;
 
-		mpLogo = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("menu_logo.jpg",false);
+		mpLogo = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("logo_alpha_1.bmp",false);
 		
 		if(mbGameActive)
 			mpBackground = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("menu_background_ingame.jpg",false);
