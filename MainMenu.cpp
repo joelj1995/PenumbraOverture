@@ -2040,7 +2040,7 @@ cMainMenu::cMainMenu(cInit *apInit)  : iUpdateable("MainMenu")
 
 	//Load graphics
 	mpGfxBlackQuad = mpDrawer->CreateGfxObject("effect_black.bmp","diffalpha2d");
-	mpGfxMouse = mpDrawer->CreateGfxObject("player_crosshair_pointer.bmp","diffalpha2d");
+	mpGfxMouse = mpDrawer->CreateGfxObject("gui_def_pointer_normal.bmp","diffalpha2d");
 
 	mpGfxRainDrop = mpDrawer->CreateGfxObject("menu_rain_drop.jpg","diffadditive2d");
 	mpGfxRainSplash = mpDrawer->CreateGfxObject("menu_rain_splash.jpg","diffadditive2d");
