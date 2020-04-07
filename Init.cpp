@@ -439,9 +439,9 @@ bool cInit::Init(tString asCommandLine)
 
 	mpGame->GetGraphics()->GetLowLevel()->SetVsyncActive(mbVsync);
 
-	mbShowPreMenu = mpConfig->GetBool("Game","ShowPreMenu",true);
+	mbShowPreMenu = mpConfig->GetBool("Game","ShowPreMenu",false);
 	mbShowMenu = mpConfig->GetBool("Game","ShowMenu",true);
-	mbShowIntro = mpConfig->GetBool("Game","ShowIntro",true);
+	mbShowIntro = mpConfig->GetBool("Game","ShowIntro",false);
 
 	mfMaxPhysicsTimeStep = 1.0f / mfPhysicsUpdatesPerSec;
 	
