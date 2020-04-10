@@ -420,7 +420,7 @@ bool cInit::Init(tString asCommandLine)
 	iLowLevelGameSetup *pSetUp = NULL;
 
 	pSetUp = hplNew( cSDLGameSetup, () );
-	mpGame = hplNew( cGame, ( pSetUp,Vars) );
+	mpGame = hplNew( cGame, ( pSetUp,Vars, cString::To16Char(mpGameConfig->GetString("Resources", "Path", "."))) );
     
 #ifdef  TIMELIMIT
 	CheckTimeLimit();
