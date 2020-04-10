@@ -28,6 +28,9 @@
 
 int hplMain(const tString& asCommandLine)
 {
+#ifdef WIN32
+    SetProcessDPIAware();
+#endif
 	cInit *pInit = hplNew( cInit, () );
 
 	bool bRet = pInit->Init(asCommandLine);

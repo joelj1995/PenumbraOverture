@@ -1448,9 +1448,11 @@ cVector2l gvResolutions[] = {cVector2l(640,480), cVector2l(800,600), cVector2l(1
 							cVector2l(1280,800),cVector2l(1280,960),cVector2l(1280,1024),
 							cVector2l(1360,768),cVector2l(1360,1024),cVector2l(1400,1050),
 							cVector2l(1440,900),cVector2l(1680,1050),cVector2l(1600,1200), 
-							cVector2l(1920,1080),cVector2l(1920,1200)
+							cVector2l(1920,1080),cVector2l(1920,1200),cVector2l(1920,1440),
+							cVector2l(2048,1536),cVector2l(2560,1440),cVector2l(2560,1600),
+							cVector2l(3840,2160)
 						};
-int glResolutionNum = 17;
+int glResolutionNum = 22;
 
 tString gvTextureQuality[] = {"High","Medium","Low"};
 int glTextureQualityNum = 3;
