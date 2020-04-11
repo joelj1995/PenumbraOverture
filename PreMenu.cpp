@@ -683,8 +683,8 @@ void cPreMenu::SetActive(bool abX)
 			if(pTex) mvTextures.push_back(pTex);
 		}
 
-		mpLogoTexture = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("title_logo.jpg",false);
-		mpEpTexture = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("title_ep1.jpg",false);
+		mpLogoTexture = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("logo_alpha_1.png",false);
+		mpEpTexture = mpInit->mpGame->GetResources()->GetTextureManager()->Create2D("logo_alpha_1.png",false);
 
 
 		mfAlpha =0;

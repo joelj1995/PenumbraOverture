@@ -238,7 +238,7 @@ bool cInit::Init(tString asCommandLine)
 	}*/
 
 	//iResourceBase::SetLogCreateAndDelete(true);
-	SetWindowCaption("Penumbra Loading...");
+	SetWindowCaption("Eclipse Loading...");
 
 	// PERSONAL DIR /////////////////////
 	tWString sPersonalDir = GetSystemSpecialPath(eSystemPath_Personal);
@@ -324,8 +324,8 @@ bool cInit::Init(tString asCommandLine)
     mpGameConfig = hplNew( cConfigFile, (_W("config/game.cfg")) );
 	mpGameConfig->Load();
 
-	mvScreenSize.x = mpConfig->GetInt("Screen","Width",800);
-	mvScreenSize.y = mpConfig->GetInt("Screen","Height",600);
+	mvScreenSize.x = mpConfig->GetInt("Screen","Width",1920);
+	mvScreenSize.y = mpConfig->GetInt("Screen","Height",1080);
 	mbFullScreen = mpConfig->GetBool("Screen", "FullScreen", true);
 	mbVsync = mpConfig->GetBool("Screen", "Vsync", false);
 	mbLogResources = mpConfig->GetBool("Debug", "LogResources", false);
@@ -406,7 +406,7 @@ bool cInit::Init(tString asCommandLine)
 	Vars.AddBool("UseVoiceManagement", mpConfig->GetBool("Sound","UseVoiceManagement",true));
 	Vars.AddInt("MaxMonoChannelsHint",mlMaxMonoChannelsHint);
 	Vars.AddInt("MaxStereoChannelsHint",mlMaxStereoChannelsHint);
-	Vars.AddInt("StreamBufferSize",mpConfig->GetInt("Sound", "StreamBufferSize", 64));
+	Vars.AddInt("StreamBufferSize",mpConfig->GetInt("Sound", "StreamBufferSize", 65536));
 	Vars.AddInt("StreamBufferCount",mpConfig->GetInt("Sound", "StreamBufferCount", 4));
 	Vars.AddString("DeviceName",mpConfig->GetString("Sound", "DeviceName", "NULL"));
 	Vars.AddString("WindowCaption", "Penumbra Loading...");
@@ -420,7 +420,7 @@ bool cInit::Init(tString asCommandLine)
 	iLowLevelGameSetup *pSetUp = NULL;
 
 	pSetUp = hplNew( cSDLGameSetup, () );
-	mpGame = hplNew( cGame, ( pSetUp,Vars) );
+	mpGame = hplNew( cGame, ( pSetUp,Vars, cString::To16Char(mpGameConfig->GetString("Resources", "Path", "."))) );
     
 #ifdef  TIMELIMIT
 	CheckTimeLimit();
@@ -439,9 +439,9 @@ bool cInit::Init(tString asCommandLine)
 
 	mpGame->GetGraphics()->GetLowLevel()->SetVsyncActive(mbVsync);
 
-	mbShowPreMenu = mpConfig->GetBool("Game","ShowPreMenu",true);
+	mbShowPreMenu = mpConfig->GetBool("Game","ShowPreMenu",false);
 	mbShowMenu = mpConfig->GetBool("Game","ShowMenu",true);
-	mbShowIntro = mpConfig->GetBool("Game","ShowIntro",true);
+	mbShowIntro = mpConfig->GetBool("Game","ShowIntro",false);
 
 	mfMaxPhysicsTimeStep = 1.0f / mfPhysicsUpdatesPerSec;
 	
@@ -453,7 +453,7 @@ bool cInit::Init(tString asCommandLine)
 	// LANGUAGE ////////////////////////////////
 	mpGame->GetResources()->SetLanguageFile(msLanguageFile);
 
-	Log("Initializing "PRODUCT_NAME"\n  Version\t"PRODUCT_VERSION"\n  Date\t"PRODUCT_DATE"\n");
+	Log("Initializing " PRODUCT_NAME "\n  Version\t" PRODUCT_VERSION "\n  Date\t" PRODUCT_DATE "\n");
 	//////////////////////////////////////////////7
 	// Check if computer supports game
 	if(CheckSupport(this)==false) return false;
