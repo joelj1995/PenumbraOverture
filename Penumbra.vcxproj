@@ -44,14 +44,14 @@
     <OutDir>build/Debug\</OutDir>
     <IntDir>build/Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\eclipse\dependencies\include;D:\eclipse\dependencies\include\AL;$(IncludePath)</IncludePath>
     <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>../redist</OutDir>
     <IntDir>build/Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\eclipse\dependencies\include;D:\eclipse\dependencies\include\AL;$(IncludePath)</IncludePath>
     <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
