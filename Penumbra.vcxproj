@@ -44,15 +44,15 @@
     <OutDir>build/Debug\</OutDir>
     <IntDir>build/Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\eclipse\dependencies\include;D:\eclipse\dependencies\include\AL;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\eclipse\dependencies\lib\win32;D:\src\SDL-mirror\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>../redist</OutDir>
     <IntDir>build/Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\eclipse\dependencies\include;D:\eclipse\dependencies\include\AL;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\eclipse\dependencies\lib\win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\eclipse\dependencies\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\eclipse\dependencies\lib\win32;D:\src\SDL-mirror\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -65,6 +65,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\HPL1Engine\include;..\dependencies\include;..\OALWrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>../redist/Eclipse.exe</OutputFile>
@@ -72,7 +73,7 @@
       <ProgramDatabaseFile>$(OutDir)Penumbra.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalDependencies>legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;%(AdditionalDependencies);SDL2.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -85,7 +86,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>HPL.lib;OALWrapper.lib;fltk.lib;wsock32.lib;comctl32.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>HPL.lib;OALWrapper.lib;fltk.lib;wsock32.lib;comctl32.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies);SDL2.lib</AdditionalDependencies>
       <OutputFile>../redist/Eclipse.exe</OutputFile>
       <AdditionalLibraryDirectories>..\dependencies\lib\win32;..\HPL1Engine\lib;..\OALWrapper\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>

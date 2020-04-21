@@ -238,7 +238,6 @@ bool cInit::Init(tString asCommandLine)
 	}*/
 
 	//iResourceBase::SetLogCreateAndDelete(true);
-	SetWindowCaption("Eclipse Loading...");
 
 	// PERSONAL DIR /////////////////////
 	tWString sPersonalDir = GetSystemSpecialPath(eSystemPath_Personal);
@@ -649,8 +648,6 @@ bool cInit::Init(tString asCommandLine)
 		gbUsingUserSettings = true;
 	}
 
-	SetWindowCaption("Penumbra");
-	
 	return true;
 }
 
